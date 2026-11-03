@@ -1,0 +1,70 @@
+{
+  "nombre": "ALDO",
+  "repo": "aldo",
+  "cabecera": ["DOCUMENTOS SIN SUBIR NADA", "PDF, CV Y DIAPOSITIVAS", "● v1.0 · PÚBLICO"],
+  "portada": {"img": "docs/aldo-pdf.jpg", "alt": "Aldo con las herramientas de PDF: unir, extraer, dividir, girar, numerar y más"},
+  "enlaces": [["▶ ABRIR ALDO", "https://eyverqt.github.io/aldo/"], ["POR QUÉ ALDO", "#por-que"], ["PORTFOLIO", "https://eyverqt.netlify.app"]],
+  "lema": "(TUS ARCHIVOS NO SALEN DE TU NAVEGADOR)",
+  "intro": [
+    "Une, divide y edita PDF sin subirlos a ningún servidor.",
+    "Escribe tu CV y descárgalo en un PDF que leen los filtros ATS.",
+    "Pasa un guion de texto a una presentación PPTX editable.",
+    "Sin instalar, sin cuenta y sin topes diarios.",
+    "Una vez abierta funciona sin conexión."
+  ],
+  "secciones": [
+    {"titulo": "QUÉ HACE", "par": "(NUEVE HERRAMIENTAS DE PDF, CV Y PPTX)", "contenido": [
+      {"cols": ["UNIR", "VARIOS PDF EN UNO, EN EL ORDEN QUE ELIJAS"], "anchos": [20]},
+      {"cols": ["EXTRAER Y QUITAR", "PÁGINAS 1-3, 5, 8-"], "anchos": [20]},
+      {"cols": ["DIVIDIR", "CADA PÁGINA EN SU PROPIO PDF"], "anchos": [20]},
+      {"cols": ["GIRAR Y NUMERAR", "90°, 180°, 270° Y 1/10 AL PIE"], "anchos": [20]},
+      {"cols": ["MARCA DE AGUA", "UN TEXTO EN DIAGONAL"], "anchos": [20]},
+      {"cols": ["QUITAR METADATOS", "AUTOR, PROGRAMA Y FECHAS FUERA"], "anchos": [20]},
+      {"cols": ["IMÁGENES A PDF", "JPG, PNG O WEBP"], "anchos": [20]},
+      {"cols": ["CV", "UNA COLUMNA Y TEXTO REAL, A4 O CARTA"], "anchos": [20]},
+      {"cols": ["DIAPOSITIVAS", "# TÍTULO · - PUNTO → PPTX EDITABLE"], "anchos": [20]}
+    ]},
+    {"titulo": "NOVEDADES", "par": "(v1.0: CUATRO APPS EN UNA)", "contenido": [
+      {"b": "2026-11 · ALDO 1.0"},
+      "",
+      "Reúne la idea de Morfo PDF, Presenta y Generador CV en una web sin build.",
+      "La generación con Gemini de Estudia IA se queda fuera a propósito:",
+      "obligaba a usar una clave y mandar tus documentos a una nube."
+    ]},
+    {"titulo": "POR QUÉ", "par": "(FRENTE A LO QUE YA EXISTE)", "ancla": "por-que", "contenido": [
+      {"cols": ["SMALLPDF", "NUBE, UNAS 2 TAREAS AL DÍA GRATIS"], "anchos": [14]},
+      {"cols": ["ILOVEPDF", "CÓMODO, PERO SUBE LOS ARCHIVOS A SUS SERVIDORES"], "anchos": [14]},
+      {"cols": ["STIRLING-PDF", "MÁS DE 50 FUNCIONES, PERO HAY QUE MONTAR SERVIDOR"], "anchos": [14]},
+      "",
+      {"b": "LO QUE ALDO HACE DISTINTO:"},
+      "",
+      {"cols": ["● PRIVADO", "(LA CSP IMPIDE ENVIAR NADA A NINGÚN SITIO)"], "anchos": [16]},
+      {"cols": ["● SIN TOPES", "(SIN LÍMITE DE TAREAS: TRABAJA TU EQUIPO)"], "anchos": [16]},
+      {"cols": ["● SIN CONEXIÓN", "(INSTALABLE COMO APP)"], "anchos": [16]},
+      {"cols": ["● TODO JUNTO", "(PDF, CV Y DIAPOSITIVAS EN UN SITIO)"], "anchos": [16]},
+      "",
+      {"b": "LO QUE NO HACE:"},
+      "",
+      "No comprime, no convierte a Word y no aplica OCR: eso exige motores",
+      "pesados. Para eso, Stirling-PDF. No abre PDF con contraseña."
+    ]},
+    {"titulo": "USAR", "par": "(SIN INSTALAR NADA)", "contenido": [
+      {"cols": ["ABRE", "EYVERQT.GITHUB.IO/ALDO"], "anchos": [14]},
+      {"cols": ["PDF", "ELIGE HERRAMIENTA, SUELTA ARCHIVOS Y LISTO"], "anchos": [14]},
+      {"cols": ["CV", "RELLENA, MIRA LA VISTA PREVIA Y DESCARGA"], "anchos": [14]},
+      {"cols": ["DIAPOSITIVAS", "ESCRIBE EL GUION Y DESCARGA EL PPTX"], "anchos": [14]},
+      "",
+      "Para instalarla: en Chrome o Edge, botón Instalar de la barra de direcciones"
+    ]},
+    {"titulo": "GALERÍA", "par": "(CV Y DIAPOSITIVAS)", "contenido": [
+      {"imagenes": [["docs/aldo-cv.jpg", "CV con datos de ejemplo y su vista previa"], ["docs/aldo-diapos.jpg", "Guion convertido en presentación"]]},
+      {"detalles": "ESTRUCTURA DEL PROYECTO", "codigo": "text", "texto": "aldo/\n├── index.html · 404.html  # La página y las rutas limpias en GitHub Pages\n├── documentos.js          # PDF, CV y PPTX, sin tocar la página\n├── app.js · app.css       # Interfaz con el estilo eyverqt\n├── vendor/                # pdf-lib y PptxGenJS (MIT), servidos desde aquí\n├── sw.js                  # Sin conexión\n└── scripts/estrellas.py   # La gráfica de estrellas (GitHub Actions)"}
+    ]},
+    {"titulo": "LICENCIA", "par": "(CÓDIGO MIT, CONTENIDO © EYVER GÓMEZ)", "contenido": [
+      "Código bajo MIT. Contenido y diseño © Eyver Gómez.",
+      "pdf-lib y PptxGenJS (MIT) mantienen sus licencias en vendor/.",
+      "Sin analíticas ni cookies. El borrador del CV queda solo en tu navegador."
+    ]}
+  ],
+  "estrellas": true
+}

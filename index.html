@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/aldo/">
+<title>Aldo</title>
+<meta name="description" content="Aldo — une, divide y edita PDF, crea tu CV y tus presentaciones. Todo en tu navegador: sin subir archivos, sin cuenta y sin topes.">
+<meta name="theme-color" content="#ffffff">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' blob: data:; manifest-src 'self'; worker-src 'self'; connect-src 'self' blob: data:; base-uri 'self'; form-action 'none'">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
+<link rel="stylesheet" href="eyverqt.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="header page">
+  <a class="logo" href="pdf" data-ir="pdf">Aldo<br><span id="logoSub">PDF</span></a>
+  <div class="meta"><span class="muted">Sin subir nada</span><span class="hot">En tu navegador</span></div>
+</header>
+<nav class="nav page sub" id="tabs" aria-label="Secciones">
+  <a href="pdf" data-ir="pdf">PDF</a>
+  <a href="cv" data-ir="cv">CV</a>
+  <a href="diapositivas" data-ir="diapositivas">Diapositivas</a>
+  <a href="por-que" data-ir="por-que">Por qué</a>
+</nav>
+<div class="bar page-bar" id="barTop"><i></i></div>
+
+<main class="wrap">
+  <section class="pagina" data-p="pdf">
+    <div class="cols">
+      <div>
+        <section class="step">
+          <div class="label up"><b>01 · Herramienta</b><span class="muted" id="herrDesc"></span></div>
+          <ul class="list tipos" id="herramientas"></ul>
+        </section>
+      </div>
+      <div class="pegado">
+        <section class="step">
+          <div class="label up"><b>02 · Archivos</b><span class="muted" id="listaInfo"></span></div>
+          <button class="drop" type="button" id="dropPdf"><span class="display drop-t">Suelta tus archivos</span><small id="dropPdfS">Se procesan aquí. Nada se sube</small></button>
+          <input type="file" id="filePdf" multiple hidden>
+          <ul class="archivos" id="archivos"></ul>
+        </section>
+        <section class="step" id="pasoOpc" hidden>
+          <div class="label up"><b>03 · Opciones</b></div>
+          <div id="opcPaginas" hidden><label class="field"><input id="paginas" spellcheck="false" autocomplete="off" placeholder="Páginas: 1-3, 5, 8-"></label></div>
+          <div class="opt" id="opcGiro" hidden><span>Girar</span><div class="seg" id="segGiro"><button type="button" data-v="90" aria-pressed="true">90°</button><button type="button" data-v="180" aria-pressed="false">180°</button><button type="button" data-v="270" aria-pressed="false">270°</button></div></div>
+          <div id="opcTexto" hidden><label class="field"><input id="textoMarca" spellcheck="false" autocomplete="off" placeholder="Texto de la marca de agua"></label></div>
+        </section>
+        <div class="acts"><button class="btn" type="button" id="btnPdf">Procesar</button></div>
+        <p class="nota muted up" id="resPdf"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pagina" data-p="cv" hidden>
+    <div class="cols">
+      <div>
+        <section class="step">
+          <div class="label up"><b>01 · Tus datos</b><span class="muted">Se guardan solo en este navegador</span></div>
+          <label class="field"><input data-cv="nombre" spellcheck="false" placeholder="Nombre completo"></label>
+          <label class="field"><input data-cv="titular" spellcheck="false" placeholder="Titular: lo que haces, en una línea"></label>
+          <label class="field"><input data-cv="contacto" spellcheck="false" placeholder="Contacto: correo · teléfono · ciudad · web"></label>
+          <span class="rotulo up muted">Perfil</span><textarea data-cv="perfil" rows="3" placeholder="Dos o tres frases con resultados medibles"></textarea>
+          <span class="rotulo up muted">Experiencia · bloques separados por una línea en blanco</span><textarea data-cv="experiencia" rows="8" spellcheck="false" placeholder="Cargo · Empresa | 2022 - 2025&#10;- Logro con una cifra&#10;- Otro logro"></textarea>
+          <span class="rotulo up muted">Educación</span><textarea data-cv="educacion" rows="3" spellcheck="false" placeholder="Título · Universidad | 2024"></textarea>
+          <span class="rotulo up muted">Habilidades</span><textarea data-cv="habilidades" rows="2" spellcheck="false" placeholder="Separadas por comas"></textarea>
+          <div class="opt"><span>Papel</span><div class="seg" id="segPapel"><button type="button" data-v="A4" aria-pressed="true">A4</button><button type="button" data-v="Letter" aria-pressed="false">Carta</button></div></div>
+          <div class="acts"><button class="btn" type="button" id="btnCv">Descargar PDF</button></div>
+        </section>
+      </div>
+      <div class="pegado">
+        <section class="step"><div class="label up"><b>Vista previa</b><span class="muted">Texto real: lo leen los filtros ATS</span></div><div class="hoja" id="cvVista"></div></section>
+      </div>
+    </div>
+  </section>
+
+  <section class="pagina" data-p="diapositivas" hidden>
+    <div class="cols">
+      <div>
+        <section class="step">
+          <div class="label up"><b>01 · Guion</b><span class="muted"># título · - punto</span></div>
+          <textarea id="guion" rows="16" spellcheck="false"></textarea>
+          <div class="opt"><span>Tema</span><div class="seg" id="segTema"><button type="button" data-v="claro" aria-pressed="true">Claro</button><button type="button" data-v="oscuro" aria-pressed="false">Oscuro</button></div></div>
+          <div class="acts"><button class="btn" type="button" id="btnPptx">Descargar PPTX</button></div>
+        </section>
+      </div>
+      <div class="pegado">
+        <section class="step"><div class="label up"><b>Vista previa</b><span class="muted" id="diaInfo"></span></div><div class="diapos" id="diapos"></div></section>
+      </div>
+    </div>
+  </section>
+
+  <section class="pagina angosta" data-p="por-que" hidden>
+    <section class="step"><div class="label up"><b>Por qué Aldo</b><span class="muted">Frente a lo que ya existe</span></div><ul class="list vs" id="vs"></ul></section>
+  </section>
+</main>
+
+<div class="marquee" aria-hidden="true"><div><span>Aldo</span><span>Une</span><span>Divide</span><span>Crea</span><span>Aldo</span><span>Une</span><span>Divide</span><span>Crea</span></div></div>
+<footer class="footer">
+  <a href="https://eyverqt.netlify.app" target="_blank" rel="noopener">Portfolio</a>
+  <a href="https://github.com/eyverqt/aldo" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://cal.com/eyverqt/15min" target="_blank" rel="noopener">Agendar llamada</a>
+  <a href="mailto:eyverqt@gmail.com">Email</a>
+</footer>
+<div class="toast" id="toast" hidden></div>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/pptxgen.bundle.js"></script>
+<script src="documentos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
